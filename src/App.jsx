@@ -1,9 +1,11 @@
 import React from "react";
 import { Canvas } from "@react-three/fiber";
 import Experience from "./Components/Experience.jsx";
-import { ScrollControls } from "@react-three/drei";
+import { Scroll, ScrollControls } from "@react-three/drei";
 import { config } from "./config.js";
 import { Leva } from "leva";
+import Interface from "./Components/Interface";
+
 const App = () => {
   return (
     <div className="h-screen w-screen">
@@ -20,6 +22,10 @@ const App = () => {
           <group position-y={-1}>
             <Experience />
           </group>
+
+          <Scroll html>
+            <Interface />
+          </Scroll>
         </ScrollControls>
       </Canvas>
     </div>

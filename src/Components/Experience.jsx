@@ -7,10 +7,10 @@ import {
 import { Avatar } from "./3D/Avatar";
 
 import { useRef } from "react";
-import Home from "./Sections/Home.jsx";
-import Skills from "./Sections/Skills.jsx";
-import Projects from "./Sections/Projects.jsx";
-import Contact from "./Sections/Contact.jsx";
+import Home from "./Sections3D/Home.jsx";
+import Skills from "./Sections3D/Skills.jsx";
+import Projects from "./Sections3D/Projects.jsx";
+import Contact from "./Sections3D/Contact.jsx";
 import { useFrame } from "@react-three/fiber";
 import { useApp } from "../Context/context";
 
