@@ -11,7 +11,10 @@ const App = () => {
     <div className="h-screen w-screen">
       <Leva />
       <Canvas camera={{ position: [0, 0.5, 5], fov: 42 }}>
-        <color attach="background" args={["#f5f3ee"]} />
+        {/* <color attach="background" args={["#3b3b3b"]} /> */}
+        {/* <color attach="background" args={["#C1BAA1"]} /> */}
+        {/* <color attach="background" args={["#D6C0B3"]} /> */}
+        {/* <color attach="background" args={["#E2DAD6"]} /> */}
         <fog attach="fog" args={["#f5f3ee", 10, 50]} />
 
         <ScrollControls
