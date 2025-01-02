@@ -51,7 +51,7 @@ export function Avatar(props) {
         rotation.map((r, i) => THREE.MathUtils.lerp(r, targetRotation[i], 0.09))
       );
     } else {
-      const targetPosition = [0, 0, 0];
+      const targetPosition = [0, 0.06, 0];
       setPosition(
         position.map((p, i) => THREE.MathUtils.lerp(p, targetPosition[i], 0.03))
       );
