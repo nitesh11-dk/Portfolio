@@ -12,8 +12,8 @@ export function Avatar(props) {
 
   const model = useRef();
   const [animation, setAnimation] = useState("Typing");
-  const [position, setPosition] = useState([-0.7, 0.0, 0.0]);
-  const [rotation, setRotation] = useState([0.1, 1, 0]);
+  const [position, setPosition] = useState([-0.55, 0.0, -0.3]);
+  const [rotation, setRotation] = useState([0.1, 2.6, 0]);
 
   const { animations: idleAnimation } = useFBX("/animations/Idle.fbx");
   const { animations: walkAnimation } = useFBX("/animations/Walking.fbx");
@@ -41,13 +41,20 @@ export function Avatar(props) {
     const scrollDelta = scrollData.offset - lastScroll.current;
 
     if (scrollData.offset === 0) {
-      // At top of page - typing animation with custom position/rotation
       setAnimation("Typing");
-      setPosition([-0.55, 0.0, -0.3]);
-      setRotation([0.1, 2.6, 0]);
+      const targetPosition = [-0.55, 0.0, -0.3];
+      setPosition(
+        position.map((p, i) => THREE.MathUtils.lerp(p, targetPosition[i], 0.09))
+      );
+      const targetRotation = [0.1, 2.6, 0];
+      setRotation(
+        rotation.map((r, i) => THREE.MathUtils.lerp(r, targetRotation[i], 0.09))
+      );
     } else {
-      // Scrolled down - walking/idle with reset position/rotation
-      setPosition([0, 0, 0]);
+      const targetPosition = [0, 0, 0];
+      setPosition(
+        position.map((p, i) => THREE.MathUtils.lerp(p, targetPosition[i], 0.03))
+      );
 
       let rotationTarget = 0;
       if (Math.abs(scrollDelta) > 0.0001) {
