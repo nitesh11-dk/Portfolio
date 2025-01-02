@@ -9,7 +9,7 @@ import Interface from "./Components/Interface";
 const App = () => {
   return (
     <div className="h-screen w-screen">
-      <Leva />
+      <Leva hidden={true} />
       <Canvas camera={{ position: [0, 0.5, 5], fov: 42 }}>
         <color attach="background" args={["#f5f3ee"]} />
         <fog attach="fog" args={["#f5f3ee", 10, 50]} />
