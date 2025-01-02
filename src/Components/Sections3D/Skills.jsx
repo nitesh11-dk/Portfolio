@@ -8,15 +8,15 @@ const Skills = () => {
 
   const wallControls = useControls("Wall Controls", {
     position: {
-      value: [-2, 0, 0],
+      value: [-2.1, 0, 0],
       step: 0.1,
     },
     rotation: {
-      value: [0, 0, 0],
+      value: [0, 0.5, 0],
       step: 0.1,
     },
     scale: {
-      value: 1,
+      value: 0.6,
       step: 0.1,
     },
   });
