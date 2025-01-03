@@ -5,7 +5,7 @@ export const config = {
   skills : [
     { name: "HTML", color: "#E44D26", textColor: "#FFFFFF" },
     { name: "CSS", color: "#264DE4", textColor: "#FFFFFF" },
-    { name: "JavaScript", color: "#F7DF1E", textColor: "#000000" },
+    { name: "JS", color: "#F7DF1E", textColor: "#000000" },
     { name: "React", color: "#61DAFB", textColor: "#000000" },
     { name: "Docker", color: "#2496ED", textColor: "#FFFFFF" },
     { name: "ThreeJS", color: "#000000", textColor: "#FFFFFF" },
