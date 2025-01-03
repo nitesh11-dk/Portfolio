@@ -1,13 +1,17 @@
-import React from "react";
-import { useGLTF } from "@react-three/drei";
+import React, { useState, useEffect } from "react";
+import { useGLTF, useCursor } from "@react-three/drei";
 import { Whatshap } from "./Whatshap";
 import { Github } from "./Github";
 import { Linkdin } from "./Linkdin";
 import { Discord } from "./Discord";
-import { useControls } from "leva";
+import { config } from "../../config.js";
 
 export function Social(props) {
   const { nodes, materials } = useGLTF("/models/socialmedia.glb");
+  const [hovered, setHovered] = useState(null);
+  useCursor(!!hovered);
+
+  const socialLinks = config.socialLinks;
 
   return (
     <group {...props} dispose={null}>
@@ -15,18 +19,30 @@ export function Social(props) {
         <Whatshap
           position={[1.8, 3.2, -1.4]}
           rotation={[0, Math.PI, Math.PI]}
-          scale={0.8}
+          onPointerEnter={() => setHovered("whatsapp")}
+          onPointerLeave={() => setHovered(null)}
+          onClick={() => window.open(socialLinks.whatsapp)}
+          opacity={hovered === "whatsapp" ? 1 : 0.5}
         />
-        <Github position={[-1.6, -1.5, -3.9]} scale={0.8} />
+        <Github
+          position={[-1.6, -1.5, -3.9]}
+          onPointerEnter={() => setHovered("github")}
+          onPointerLeave={() => setHovered(null)}
+          onClick={() => window.open(socialLinks.github)}
+        />
         <Linkdin
           position={[1.6, 6.0, -1.4]}
           rotation={[0, Math.PI, Math.PI]}
-          scale={0.8}
+          onPointerEnter={() => setHovered("linkedin")}
+          onPointerLeave={() => setHovered(null)}
+          onClick={() => window.open(socialLinks.linkedin)}
         />
         <Discord
           position={[-1.1, 3.2, -1.4]}
           rotation={[0, Math.PI, Math.PI]}
-          scale={0.8}
+          onPointerEnter={() => setHovered("discord")}
+          onPointerLeave={() => setHovered(null)}
+          onClick={() => window.open(socialLinks.discord)}
         />
       </group>
       <mesh

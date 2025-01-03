@@ -70,7 +70,7 @@ export function Box({ position, args = [0.5, 0.5, 0.5], skill }) {
       <meshStandardMaterial
         color={hovered ? "#ff9f9f" : skill.color}
         metalness={0.9}
-        roughness={0.1}
+        roughness={0.6}
         envMapIntensity={1}
       />
       {textDisplacement.map((face, index) => (

@@ -38,7 +38,7 @@ export function Mailbox(props) {
       dispose={null}
       onPointerEnter={() => setMailboxHovered(true)}
       onPointerLeave={() => setMailboxHovered(false)}
-      onClick={() => window.open(`mailto:${config.contact.mail}`)}
+      onClick={() => window.open(`mailto:${config.socialLinks.mail}`)}
     >
       <mesh
         geometry={nodes.group2028911354.geometry}
