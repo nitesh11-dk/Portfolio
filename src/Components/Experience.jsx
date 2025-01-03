@@ -67,7 +67,13 @@ const Experience = () => {
       <Environment preset="sunset" />
       <axesHelper args={[5]} />
       <Avatar />
-      <OrbitControls />
+      {/* <OrbitControls /> */}
+
+      {/* Smooth oil black plane */}
+      <mesh rotation-x={-Math.PI / 2} position-y={-0.001}>
+        <planeGeometry args={[100, 100]} />
+        <meshStandardMaterial color="#1a1a1a" roughness={0.2} metalness={0.8} />
+      </mesh>
 
       <ContactShadows opacity={0.5} scale={[30, 30]} color="#9c8e66" />
 

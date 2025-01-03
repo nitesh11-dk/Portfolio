@@ -43,7 +43,8 @@ const Contact = () => {
 
   return (
     <group position={[0.4, 0, SECTIONS_DISTANCE * 3]}>
-      <SectionTitle position={[-2.7, 0, 0]} rotation={[0, 0.4, 0]}>Contact</SectionTitle>
+      {/* <SectionTitle position={[-2.7, 0, 0]} rotation={[0, 0.4, 0]}>Contact</SectionTitle> */}
+
       <Float
         speed={1.34}
         rotationIntensity={0.5}
@@ -60,12 +61,7 @@ const Contact = () => {
         position-y={0.25}
         position-z={-0.5}
       />
-      <ParkBench
-        scale={0.5}
-        position-x={1}
-        position-z={-2}
-        rotation-y={-2.3}
-      />
+      <ParkBench scale={0.5} position-x={1} position-z={-2} rotation-y={-2.3} />
     </group>
   );
 };
