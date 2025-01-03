@@ -2,7 +2,7 @@ export function createPositions(skills) {
   const positions = [];
   const spacing = 0.8;
   const cubesPerRow = 4;
-  const startHeight = 0.8;
+  const startHeight = 3;
 
   for (let i = 0; i < skills.length; i++) {
     const row = Math.floor(i / cubesPerRow);
