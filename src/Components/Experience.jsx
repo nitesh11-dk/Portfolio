@@ -26,8 +26,8 @@ const Experience = () => {
   function CameraPosition() {
     const targetPosition =
       scrollData.offset === 0
-        ? new THREE.Vector3(0.08, 2.63, 2.98)
-        : new THREE.Vector3(0, 0.5, 5);
+        ? new THREE.Vector3(0.08, 1.53, 2.5)
+        : new THREE.Vector3(0.7, 0.3, 4);
 
     const targetRotation =
       scrollData.offset === 0
@@ -56,15 +56,15 @@ const Experience = () => {
     sectionContainer.current.position.z =
       -scrollData.offset * SECTIONS_DISTANCE * (scrollData.pages - 1);
 
-    // CameraPosition();
+    CameraPosition();
   });
 
   return (
-    <group className="mainContainer">
+    <group className="mainContainer" position={[0.6, 0, 0]}>
       <Environment preset="sunset" />
       <axesHelper args={[5]} />
       <Avatar />
-      <OrbitControls />
+      {/* <OrbitControls /> */}
 
       <ContactShadows opacity={0.5} scale={[30, 30]} color="#9c8e66" />
 
