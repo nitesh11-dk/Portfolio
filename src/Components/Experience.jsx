@@ -15,7 +15,6 @@ import { useFrame } from "@react-three/fiber";
 import { useApp } from "../Context/context";
 import { useThree } from "@react-three/fiber";
 import * as THREE from "three";
-import { useControls } from "leva";
 import { config } from "../config";
 
 const Experience = () => {
@@ -53,13 +52,12 @@ const Experience = () => {
     );
   }
 
-  console.log(currentSection);
   useFrame(() => {
     sectionContainer.current.position.z =
       -scrollData.offset * SECTIONS_DISTANCE * (scrollData.pages - 1);
 
     setCurrentSection(
-      config.sections[Math.round(scrollData.offset * (scrollData.pages - 1))]
+      config.sections[Math.floor(scrollData.offset * (scrollData.pages - 1))]
     );
     // CameraPosition();
   });

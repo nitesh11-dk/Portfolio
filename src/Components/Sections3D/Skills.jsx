@@ -29,7 +29,7 @@ const Skills = () => {
         rotation={wallControls.rotation}
         scale={wallControls.scale}
       /> */}
-      <group position={[-2.7, 0.5, 0]} scale={0.5}>
+      <group position={[-2.7, 0.5, 0]} rotation-y={0.6} scale={0.5}>
         <PhysicsCube />
       </group>
     </group>

@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Text } from "@react-three/drei";
 import { useBox } from "@react-three/cannon";
+import { useApp } from "../../Context/context.jsx";
 
 export function Box({ position, args = [0.5, 0.5, 0.5], skill }) {
+  const { currentSection } = useApp();
   const boxSize = Math.max(0.6, skill.name.length * 0.1);
   const adjustedArgs = [boxSize, boxSize, boxSize];
   const textOffset = boxSize / 2 + 0.01;
@@ -45,36 +47,11 @@ export function Box({ position, args = [0.5, 0.5, 0.5], skill }) {
     };
   }, [api.position, api.velocity]);
 
-  useFrame(() => {
-    const bounds = {
-      x: 1.9,
-      z: 1.9,
-      y: 2.9,
-    };
-
-    if (Math.abs(currentPosition[0]) > bounds.x) {
-      const targetX = Math.sign(currentPosition[0]) * bounds.x;
-      api.position.set(targetX, currentPosition[1], currentPosition[2]);
-      api.velocity.set(0, currentVelocity[1], currentVelocity[2]);
-    }
-
-    if (Math.abs(currentPosition[2]) > bounds.z) {
-      const targetZ = Math.sign(currentPosition[2]) * bounds.z;
-      api.position.set(currentPosition[0], currentPosition[1], targetZ);
-      api.velocity.set(currentVelocity[0], currentVelocity[1], 0);
-    }
-
-    if (currentPosition[1] > bounds.y) {
-      api.position.set(currentPosition[0], bounds.y, currentPosition[2]);
-      api.velocity.set(currentVelocity[0], 0, currentVelocity[2]);
-    }
-  });
-
   const handlePointerDown = (e) => {
     e.stopPropagation();
-    const randomX = (Math.random() - 0.5) * 20;
-    const randomZ = (Math.random() - 0.5) * 20;
-    api.applyImpulse([randomX, 10, randomZ], [0, 0, 0]);
+    const randomX = (Math.random() - 0.5) * 5;
+    const randomZ = (Math.random() - 0.5) * 5;
+    api.applyImpulse([randomX, 4, randomZ], [0, 0, 0]);
     api.angularVelocity.set(
       Math.random() * 5,
       Math.random() * 5,
