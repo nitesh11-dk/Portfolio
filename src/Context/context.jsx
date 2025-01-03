@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import { config } from "../config";
 
 // Create the context
 export const AppContext = createContext();
@@ -6,9 +7,12 @@ export const AppContext = createContext();
 // Create a provider component
 export const AppProvider = ({ children }) => {
   const SECTIONS_DISTANCE = 10;
+  const [currentSection, setCurrentSection] = useState(config.sections[0]);
 
   const value = {
     SECTIONS_DISTANCE,
+    currentSection,
+    setCurrentSection,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

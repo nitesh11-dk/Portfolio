@@ -16,11 +16,12 @@ import { useApp } from "../Context/context";
 import { useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import { useControls } from "leva";
+import { config } from "../config";
 
 const Experience = () => {
   const sectionContainer = useRef();
   const scrollData = useScroll();
-  const { SECTIONS_DISTANCE } = useApp();
+  const { SECTIONS_DISTANCE, currentSection, setCurrentSection } = useApp();
   const { camera } = useThree();
 
   function CameraPosition() {
@@ -52,11 +53,15 @@ const Experience = () => {
     );
   }
 
+  console.log(currentSection);
   useFrame(() => {
     sectionContainer.current.position.z =
       -scrollData.offset * SECTIONS_DISTANCE * (scrollData.pages - 1);
 
-    CameraPosition();
+    setCurrentSection(
+      config.sections[Math.round(scrollData.offset * (scrollData.pages - 1))]
+    );
+    // CameraPosition();
   });
 
   return (
@@ -64,7 +69,7 @@ const Experience = () => {
       <Environment preset="sunset" />
       <axesHelper args={[5]} />
       <Avatar />
-      {/* <OrbitControls /> */}
+      <OrbitControls />
 
       <ContactShadows opacity={0.5} scale={[30, 30]} color="#9c8e66" />
 
