@@ -67,7 +67,7 @@ const Experience = () => {
       <Environment preset="sunset" />
       <axesHelper args={[5]} />
       <Avatar />
-      {/* <OrbitControls /> */}
+      <OrbitControls />
 
       <ContactShadows opacity={0.5} scale={[30, 30]} color="#9c8e66" />
 

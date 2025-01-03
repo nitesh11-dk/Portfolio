@@ -17,4 +17,7 @@ export const config = {
     { name: "Linux", color: "#FCC624", textColor: "#000000" },
     { name: "NextJS", color: "#0070F3", textColor: "#FFFFFF" },
   ],
+  contact:{
+    mail:"niteshdk11@gmail.com",
+  }
 };
