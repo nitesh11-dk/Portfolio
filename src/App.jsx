@@ -5,8 +5,9 @@ import { Scroll, ScrollControls } from "@react-three/drei";
 import { config } from "./config.js";
 import { Leva } from "leva";
 import Interface from "./Components/Interface";
-
+import { useMobile } from "./Helpers/useMobile.jsx";
 const App = () => {
+  const isMobile = useMobile();
   return (
     <div className="h-screen w-screen">
       <Leva hidden />
@@ -20,7 +21,7 @@ const App = () => {
         }}
       >
         <color attach="background" args={["#f5f3ee"]} />
-        {/* <fog attach="fog" args={["#f5f3ee", 5, 12]} /> */}
+        <fog attach="fog" args={["#f5f3ee", 5, 12]} />
 
         <ScrollControls
           pages={config.sections.length}
