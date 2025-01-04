@@ -2,7 +2,7 @@ export const config = {
   sections: ["About", "Skills", "Projects", "Contact"],
   title: "Hello I'm",
   subtitle: "Nitesh Kushwaha",
-  Skills: [
+  skills: [
     {name: "HTML", color: "#E44D26", textColor: "#FFFFFF"},
     {name: "CSS", color: "#264DE4", textColor: "#FFFFFF"},
     {name: "JavaScript", color: "#F7DF1E", textColor: "#000000"},
