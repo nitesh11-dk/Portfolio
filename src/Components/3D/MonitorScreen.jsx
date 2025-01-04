@@ -3,7 +3,7 @@ import { useAtom } from "jotai";
 import { config } from "../config";
 import { projectAtom } from "./Interface";
 
-export const MonitorScreen = ({ ...props }) => {
+export const MonitorScreen = (props) => {
   const [project] = useAtom(projectAtom);
   const projectTexture = useTexture(project.image);
 
@@ -17,6 +17,4 @@ export const MonitorScreen = ({ ...props }) => {
   );
 };
 
-config.projects.forEach((project) => {
-  useTexture.preload(project.image);
-});
+config.projects.forEach((project) => useTexture.preload(project.image));

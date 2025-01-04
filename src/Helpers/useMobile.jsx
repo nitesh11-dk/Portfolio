@@ -14,18 +14,11 @@ export const useMobile = () => {
   useEffect(() => {
     const handleResize = () => {
       setScaleFactor(window.innerWidth / REFERENCE_WIDTH);
-      if (window.innerWidth <= MOBILE_THRESHOLD) {
-        setIsMobile(true);
-      } else {
-        setIsMobile(false);
-      }
+      setIsMobile(window.innerWidth <= MOBILE_THRESHOLD);
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return {
-    scaleFactor,
-    isMobile,
-  };
+  return { scaleFactor, isMobile };
 };

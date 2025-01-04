@@ -1,25 +1,19 @@
-import { SectionTitle } from "../../Helpers/SectionTitle";
 import { useApp } from "../../Context/context";
 import { Social } from "../3D/Social";
-import { useControls } from "leva";
 import { Float } from "@react-three/drei";
 import { Mailbox } from "../3D/Mailbox";
 import { ParkBench } from "../3D/ParkBench";
 import { useMobile } from "../../Helpers/useMobile";
+
 const Contact = () => {
   const { SECTIONS_DISTANCE } = useApp();
   const { isMobile } = useMobile();
+
   return (
     <group
-      position={
-        isMobile
-          ? [1.4, -0.1, SECTIONS_DISTANCE * 3]
-          : [0.4, 0, SECTIONS_DISTANCE * 3]
-      }
+      position={isMobile ? [1.4, -0.1, SECTIONS_DISTANCE * 3] : [0.4, 0, SECTIONS_DISTANCE * 3]}
       rotation={isMobile ? [0, -1.5, 0] : [0, 0, 0]}
     >
-      {/* <SectionTitle position={[-2.7, 0, 0]} rotation={[0, 0.4, 0]}>Contact</SectionTitle> */}
-
       <Float
         speed={1.34}
         rotationIntensity={isMobile ? 0.2 : 0.5}
@@ -42,6 +36,7 @@ const Contact = () => {
         position-y={isMobile ? 0.5 : 0.25}
         position-z={isMobile ? 2.7 : -0.5}
       />
+
       <ParkBench
         scale={0.5}
         position-x={isMobile ? 1.9 : 1}

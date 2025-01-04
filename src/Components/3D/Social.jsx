@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useGLTF, useCursor } from "@react-three/drei";
 import { Whatshap } from "./Whatshap";
 import { Github } from "./Github";
-import { Linkdin } from "./Linkdin";
+import { Linkdin } from "./Linkdin"; 
 import { Discord } from "./Discord";
 import { config } from "../../config.js";
 import { Mail } from "./MAIL";
+
 export function Social(props) {
   const { nodes, materials } = useGLTF("/models/socialmedia.glb");
   const [hovered, setHovered] = useState(null);

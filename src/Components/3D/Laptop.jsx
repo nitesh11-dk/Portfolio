@@ -12,10 +12,6 @@ export function Laptop(props) {
   animations[0].name = "LaptopAnim";
   const { actions } = useAnimations(animations, group);
 
-  // useEffect(() => {
-  //   actions.LaptopAnim.reset().fadeIn(0.7).play();
-  // }, []);
-  // console.log(animations);
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Sketchfab_Scene">

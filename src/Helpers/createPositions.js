@@ -3,16 +3,14 @@ export function createPositions(skills) {
   const spacing = 0.82;
   const cubesPerRow = 4;
   const startHeight = 1.5;
+  const rowOffset = (cubesPerRow - 1) / 2;
 
   for (let i = 0; i < skills.length; i++) {
-    const row = Math.floor(i / cubesPerRow);
-    const col = i % cubesPerRow;
-    
-    const x = (col - (cubesPerRow - 1) / 2) * spacing;
-    const y = startHeight + row * spacing -1;
-    const z = 0;
-
-    positions.push([x, y, z]);
+    positions.push([
+      ((i % cubesPerRow) - rowOffset) * spacing,
+      startHeight + Math.floor(i / cubesPerRow) * spacing - 1,
+      0
+    ]);
   }
   return positions;
 }

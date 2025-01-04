@@ -1,21 +1,19 @@
 import React, { useState } from "react";
-import { useGLTF, useScroll } from "@react-three/drei";
-import { Html } from "@react-three/drei";
-import { config } from "../../config";
+import { useGLTF, useScroll, Html } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
+import { config } from "../../config";
 
 export function Resume(props) {
   const { nodes, materials } = useGLTF("/models/resume.glb");
   const [hovered, setHovered] = useState(false);
   const [opacity, setOpacity] = useState(1);
   const scrollData = useScroll();
+
   useFrame((state) => {
     if (scrollData.offset <= 0) {
-      if (!hovered) {
-        setOpacity(0.5 + Math.sin(state.clock.elapsedTime * 2) * 0.15);
-      } else {
-        setOpacity(1);
-      }
+      setOpacity(
+        hovered ? 1 : 0.5 + Math.sin(state.clock.elapsedTime * 2) * 0.15
+      );
     } else {
       setOpacity(0);
     }
@@ -29,16 +27,14 @@ export function Resume(props) {
       onPointerLeave={() => setHovered(false)}
       onClick={() => window.open(config.resume, "_blank")}
     >
-      {
-        <Html>
-          <div
-            className="bg-black/80 text-white px-2 py-1 rounded-lg"
-            style={{ opacity }}
-          >
-            <h1 className="text-md font-semibold">Resume</h1>
-          </div>
-        </Html>
-      }
+      <Html>
+        <div
+          className="bg-black/80 text-white px-2 py-1 rounded-lg"
+          style={{ opacity }}
+        >
+          <h1 className="text-md font-semibold">Resume</h1>
+        </div>
+      </Html>
       <group dispose={null}>
         <mesh
           name="Cube073"

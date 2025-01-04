@@ -10,17 +10,11 @@ export function Box({ position, args = [0.5, 0.5, 0.5], skill }) {
   const textOffset = boxSize / 2 + 0.01;
 
   const textDisplacement = [
-    // Front
     { position: [0, 0, textOffset], rotation: [0, 0, 0] },
-    // Back
     { position: [0, 0, -textOffset], rotation: [0, Math.PI, 0] },
-    // Right
     { position: [textOffset, 0, 0], rotation: [0, Math.PI / 2, 0] },
-    // Left
     { position: [-textOffset, 0, 0], rotation: [0, -Math.PI / 2, 0] },
-    // Top
     { position: [0, textOffset, 0], rotation: [-Math.PI / 2, 0, 0] },
-    // Bottom
     { position: [0, -textOffset, 0], rotation: [Math.PI / 2, 0, 0] },
   ];
 
@@ -38,8 +32,8 @@ export function Box({ position, args = [0.5, 0.5, 0.5], skill }) {
   const [currentVelocity, setCurrentVelocity] = useState([0, 0, 0]);
 
   useEffect(() => {
-    const unsubPosition = api.position.subscribe((p) => setCurrentPosition(p));
-    const unsubVelocity = api.velocity.subscribe((v) => setCurrentVelocity(v));
+    const unsubPosition = api.position.subscribe(setCurrentPosition);
+    const unsubVelocity = api.velocity.subscribe(setCurrentVelocity);
     return () => {
       unsubPosition();
       unsubVelocity();
