@@ -2,14 +2,19 @@ import { SectionTitle } from "../../Helpers/SectionTitle";
 import { useApp } from "../../Context/context";
 import PhysicsCube from "./PhysicsCube";
 import { MeshDistortMaterial } from "@react-three/drei";
-import { useControls } from "leva";
-
+import { useMobile } from "../../Helpers/useMobile";
 const Skills = () => {
   const { SECTIONS_DISTANCE } = useApp();
+  const { isMobile } = useMobile();
 
   return (
-    <group position={[0.4, 0, SECTIONS_DISTANCE]}>
-      <mesh position-y={1.3} position-x={0.8}>
+    <group
+      position={
+        isMobile ? [1.4, -0.1, SECTIONS_DISTANCE] : [0.4, 0, SECTIONS_DISTANCE]
+      }
+      rotation={isMobile ? [0, -1.5, 0] : [0, 0, 0]}
+    >
+      <mesh visible={isMobile ? false : true} position-y={1.3} position-x={0.8}>
         <sphereGeometry args={[0.7, 32, 32]} />
         <MeshDistortMaterial
           opacity={0.2}
@@ -23,17 +28,22 @@ const Skills = () => {
           ior={1.5}
         ></MeshDistortMaterial>
       </mesh>
+
       <SectionTitle
-        position-y={1.1}
-        position-x={0.4}
-        position-z={-0.5}
-        rotation-x={0}
-        rotation-y={-0.5}
-        rotation-z={0}
+        position-y={isMobile ? 0.1 : 1.1}
+        position-x={isMobile ? -3.5 : 0.4}
+        position-z={isMobile ? 1.7 : -0.5}
+        rotation-y={isMobile ? -0.6 : -0.5}
+        scale={isMobile ? 0.7 : 1}
       >
         Skills
       </SectionTitle>
-      <group position={[-2.2, 1, 0]} rotation-y={0.6} scale={0.8}>
+
+      <group
+        position={[-2.2, 1, 0]}
+        rotation-y={isMobile ? 0 : 0.6}
+        scale={0.8}
+      >
         <PhysicsCube />
       </group>
     </group>
