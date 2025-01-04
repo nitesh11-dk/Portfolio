@@ -5,7 +5,6 @@ import { useBox } from "@react-three/cannon";
 import { useApp } from "../../Context/context.jsx";
 
 export function Box({ position, args = [0.5, 0.5, 0.5], skill }) {
-  const { currentSection } = useApp();
   const boxSize = Math.max(0.6, skill.name.length * 0.1);
   const adjustedArgs = [boxSize, boxSize, boxSize];
   const textOffset = boxSize / 2 + 0.01;

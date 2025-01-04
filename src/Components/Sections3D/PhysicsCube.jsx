@@ -2,8 +2,6 @@ import { Physics, usePlane } from "@react-three/cannon";
 import { config } from "../../config";
 import { createPositions } from "../../Helpers/createPositions.js";
 import { Box } from "../3D/Box";
-import { useApp } from "../../Context/context";
-import { useEffect, useState } from "react";
 
 function Plane(props) {
   const [ref] = usePlane(() => ({
@@ -22,19 +20,7 @@ function Plane(props) {
 }
 
 export default function PhysicsCube() {
-  const { currentSection } = useApp();
-  const [hasRendered, setHasRendered] = useState(false);
   const positions = createPositions(config.skills);
-
-  useEffect(() => {
-    if (currentSection === "Skills" && !hasRendered) {
-      setHasRendered(true);
-    }
-  }, [currentSection]);
-
-  if (!hasRendered) {
-    return null;
-  }
 
   return (
     <Physics
