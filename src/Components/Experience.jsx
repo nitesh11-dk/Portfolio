@@ -59,7 +59,7 @@ const Experience = () => {
     setCurrentSection(
       config.sections[Math.floor(scrollData.offset * (scrollData.pages - 1))]
     );
-    // CameraPosition();
+    CameraPosition();
   });
 
   return (
@@ -67,7 +67,7 @@ const Experience = () => {
       <Environment preset="sunset" />
       <axesHelper args={[5]} />
       <Avatar />
-      <OrbitControls />
+      {/* <OrbitControls /> */}
 
       {/* Smooth oil black plane */}
       <mesh rotation-x={-Math.PI / 2} position-y={-0.001}>
