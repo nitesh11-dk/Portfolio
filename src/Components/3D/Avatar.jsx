@@ -4,12 +4,13 @@ import { useFBX, useGLTF, useScroll } from "@react-three/drei";
 import { SkeletonUtils } from "three-stdlib";
 import { useAnimations } from "@react-three/drei";
 import * as THREE from "three";
+import { useMobile } from "../../Helpers/useMobile";
 
 export function Avatar(props) {
   const { scene } = useGLTF("/models/Avatar.glb");
   const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene]);
   const { nodes, materials } = useGraph(clone);
-
+  const { isMobile } = useMobile();
   const model = useRef();
   const [animation, setAnimation] = useState("Typing");
   const [position, setPosition] = useState([-0.55, 0.0, -0.3]);
@@ -62,6 +63,9 @@ export function Avatar(props) {
         rotationTarget = scrollDelta > 0 ? 0 : Math.PI;
       } else {
         setAnimation("Idle");
+        if (isMobile) {
+          rotationTarget = -Math.PI / 2;
+        }
       }
 
       setRotation([
