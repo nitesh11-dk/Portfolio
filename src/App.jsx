@@ -20,7 +20,7 @@ const App = () => {
         }}
       >
         <color attach="background" args={["#f5f3ee"]} />
-        <fog attach="fog" args={["#f5f3ee", 10, 50]} />
+        <fog attach="fog" args={["#f5f3ee", 5, 25]} />
 
         <ScrollControls
           pages={config.sections.length}
