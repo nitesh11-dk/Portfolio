@@ -5,7 +5,7 @@ Command: npx gltfjsx@6.5.3 public/models/house2.glb -o src/Components/3D/House2.
 
 import React from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
-
+import { Resume } from "./Resume";
 import { useControls } from "leva";
 
 export function House2(props) {
@@ -109,6 +109,12 @@ export function House2(props) {
             material={materials["6"]}
           />
         </group>
+
+        <Resume
+          position={[0.75, 1.12, -0.6]}
+          rotation={[-1.15, -0.6, 0]}
+          scale={0.05}
+        />
       </group>
 
       <mesh className="vs-code-screen" position={[-0.52, 1.23, -0.99]}>

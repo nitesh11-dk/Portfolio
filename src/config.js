@@ -23,5 +23,6 @@ export const config = {
     github: "https://github.com/nitesh11-dk",
     linkedin: "https://www.linkedin.com/in/nitesh-dk/",
     discord: "https://discord.gg/yourdiscord", 
-  }
+  },
+  resume: "https://drive.google.com/file/d/1xKIlWUUvlDMo4Dj9vs29O1_2L69P10Tp/view",
 };
