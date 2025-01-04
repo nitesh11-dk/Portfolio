@@ -6,7 +6,7 @@ export const AppContext = createContext();
 
 // Create a provider component
 export const AppProvider = ({ children }) => {
-  const SECTIONS_DISTANCE = 10;
+  const SECTIONS_DISTANCE = 8;
   const [currentSection, setCurrentSection] = useState(config.sections[0]);
 
   const value = {
