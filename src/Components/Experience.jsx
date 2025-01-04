@@ -35,7 +35,11 @@ const Experience = () => {
     const targetPosition = isMobile
       ? scrollData.offset === 0
         ? new THREE.Vector3(1.3, 2.9, 3.4)
-        : new THREE.Vector3(mobilePosition.x, mobilePosition.y, mobilePosition.z)
+        : new THREE.Vector3(
+            mobilePosition.x,
+            mobilePosition.y,
+            mobilePosition.z
+          )
       : scrollData.offset === 0
       ? new THREE.Vector3(0.08, 1.53, 2.5)
       : new THREE.Vector3(0.7, 0.3, 4);
@@ -49,14 +53,29 @@ const Experience = () => {
       : new THREE.Euler(0, 0, 0);
 
     camera.position.lerp(targetPosition, 0.07);
-    camera.rotation.x = THREE.MathUtils.lerp(camera.rotation.x, targetRotation.x, 0.07);
-    camera.rotation.y = THREE.MathUtils.lerp(camera.rotation.y, targetRotation.y, 0.07);
-    camera.rotation.z = THREE.MathUtils.lerp(camera.rotation.z, targetRotation.z, 0.07);
+    camera.rotation.x = THREE.MathUtils.lerp(
+      camera.rotation.x,
+      targetRotation.x,
+      0.07
+    );
+    camera.rotation.y = THREE.MathUtils.lerp(
+      camera.rotation.y,
+      targetRotation.y,
+      0.07
+    );
+    camera.rotation.z = THREE.MathUtils.lerp(
+      camera.rotation.z,
+      targetRotation.z,
+      0.07
+    );
   }
 
   useFrame(() => {
-    sectionContainer.current.position.z = -scrollData.offset * SECTIONS_DISTANCE * (scrollData.pages - 1);
-    setCurrentSection(config.sections[Math.floor(scrollData.offset * (scrollData.pages - 1))]);
+    sectionContainer.current.position.z =
+      -scrollData.offset * SECTIONS_DISTANCE * (scrollData.pages - 1);
+    setCurrentSection(
+      config.sections[Math.floor(scrollData.offset * (scrollData.pages - 1))]
+    );
     CameraPosition();
   });
 
