@@ -15,7 +15,7 @@ export function Social(props) {
 
   return (
     <group {...props} dispose={null}>
-      <group position={[0, 1.1, -0.8]} scale={0.8}>
+      <group position={[0, 1.1, -0.4]} scale={0.8}>
         <Whatshap
           position={[1.8, 2, -1.4]}
           rotation={[0, Math.PI, Math.PI]}
@@ -25,7 +25,7 @@ export function Social(props) {
           opacity={hovered === "whatsapp" ? 1 : 0.5}
         />
         <Mail
-          position={[0, 4, -1.3]}
+          position={[0, 4, -1.8]}
           onPointerEnter={() => setHovered("mail")}
           onPointerLeave={() => setHovered(null)}
           onClick={() => window.open(socialLinks.mail)}
