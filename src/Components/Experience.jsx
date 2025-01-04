@@ -56,17 +56,17 @@ const Experience = () => {
     camera.rotation.x = THREE.MathUtils.lerp(
       camera.rotation.x,
       targetRotation.x,
-      0.07
+      isMobile ? 0.02 : 0.07
     );
     camera.rotation.y = THREE.MathUtils.lerp(
       camera.rotation.y,
       targetRotation.y,
-      0.07
+      isMobile ? 0.02 : 0.07
     );
     camera.rotation.z = THREE.MathUtils.lerp(
       camera.rotation.z,
       targetRotation.z,
-      0.07
+      isMobile ? 0.02 : 0.07
     );
   }
 
