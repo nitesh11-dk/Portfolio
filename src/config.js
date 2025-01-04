@@ -19,7 +19,7 @@ export const config = {
   ],
   socialLinks : {
     mail:"niteshdk11@gmail.com",
-    whatsapp: "https://wa.me/+9403080767", 
+    whatsapp: "https://wa.me/+919403080767", 
     github: "https://github.com/nitesh11-dk",
     linkedin: "https://www.linkedin.com/in/nitesh-dk/",
     discord: "https://discord.gg/yourdiscord", 

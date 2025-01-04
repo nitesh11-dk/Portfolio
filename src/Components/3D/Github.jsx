@@ -7,13 +7,49 @@ Source: https://sketchfab.com/3d-models/3d-github-logo-441d03d1076b44f483df551e0
 Title: 3D Github Logo
 */
 
-import React from "react";
-import { useGLTF } from "@react-three/drei";
+import React, { useEffect, useState } from "react";
+import { useGLTF, useCursor } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
+import * as THREE from "three";
+import { config } from "../../config";
 
 export function Github(props) {
   const { nodes, materials } = useGLTF("/models/social/github.glb");
+  const [hovered, setHovered] = useState(false);
+  const [scale, setScale] = useState(1);
+  useCursor(hovered);
+
+  useEffect(() => {
+    const emissiveColor = new THREE.Color("#181717");
+    Object.values(materials).forEach((material) => {
+      material.emissive = emissiveColor;
+      material.metalness = 0.8;
+      material.roughness = 0.6;
+    });
+  }, []);
+
+  useFrame(() => {
+    Object.values(materials).forEach((material) => {
+      material.emissiveIntensity = THREE.MathUtils.lerp(
+        material.emissiveIntensity,
+        hovered ? 14 : 0,
+        0.2
+      );
+    });
+
+    // Smooth scale transition
+    setScale(THREE.MathUtils.lerp(scale, hovered ? 1.2 : 1, 0.1));
+  });
+
   return (
-    <group {...props} dispose={null}>
+    <group
+      {...props}
+      dispose={null}
+      onPointerEnter={() => setHovered(true)}
+      onPointerLeave={() => setHovered(false)}
+      onClick={() => window.open(config.socialLinks.github)}
+      scale-z={scale}
+    >
       <group
         name="Curve012_0"
         position={[-0.055, 2.945, 6.336]}

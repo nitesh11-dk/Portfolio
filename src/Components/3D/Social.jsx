@@ -5,7 +5,7 @@ import { Github } from "./Github";
 import { Linkdin } from "./Linkdin";
 import { Discord } from "./Discord";
 import { config } from "../../config.js";
-
+import { Mail } from "./MAIL";
 export function Social(props) {
   const { nodes, materials } = useGLTF("/models/socialmedia.glb");
   const [hovered, setHovered] = useState(null);
@@ -15,17 +15,24 @@ export function Social(props) {
 
   return (
     <group {...props} dispose={null}>
-      <group>
+      <group position={[0, 1.1, -0.8]} scale={0.8}>
         <Whatshap
-          position={[1.8, 3.2, -1.4]}
+          position={[1.8, 2, -1.4]}
           rotation={[0, Math.PI, Math.PI]}
           onPointerEnter={() => setHovered("whatsapp")}
           onPointerLeave={() => setHovered(null)}
           onClick={() => window.open(socialLinks.whatsapp)}
           opacity={hovered === "whatsapp" ? 1 : 0.5}
         />
+        <Mail
+          position={[0, 4, -1.3]}
+          onPointerEnter={() => setHovered("mail")}
+          onPointerLeave={() => setHovered(null)}
+          onClick={() => window.open(socialLinks.mail)}
+          rotation={[0, Math.PI, Math.PI]}
+        />
         <Github
-          position={[-1.6, -1.5, -3.9]}
+          position={[-1.6, -2.5, -4]}
           onPointerEnter={() => setHovered("github")}
           onPointerLeave={() => setHovered(null)}
           onClick={() => window.open(socialLinks.github)}
@@ -38,7 +45,7 @@ export function Social(props) {
           onClick={() => window.open(socialLinks.linkedin)}
         />
         <Discord
-          position={[-1.1, 3.2, -1.4]}
+          position={[-2, 3.2, -1.4]}
           rotation={[0, Math.PI, Math.PI]}
           onPointerEnter={() => setHovered("discord")}
           onPointerLeave={() => setHovered(null)}
