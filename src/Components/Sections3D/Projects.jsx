@@ -3,11 +3,19 @@ import { useApp } from "../../Context/context";
 import { RoundedBox } from "@react-three/drei";
 import { Monitor } from "../3D/Monitor";
 // import { MonitorScreen } from "../3D/MonitorScreen";
-
+import { useMobile } from "../../Helpers/useMobile";
 const Projects = () => {
   const { SECTIONS_DISTANCE } = useApp();
+  const { isMobile } = useMobile();
   return (
-    <group position={[0.4, 0, SECTIONS_DISTANCE * 2]}>
+    <group
+      position={
+        isMobile
+          ? [1.4, -0.1, SECTIONS_DISTANCE * 2]
+          : [0.4, 0, SECTIONS_DISTANCE * 2]
+      }
+      rotation={isMobile ? [0, -1.5, 0] : [0, 0, 0]}
+    >
       <group
         position-x={0.5}
         position-z={0}

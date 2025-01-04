@@ -31,7 +31,7 @@ const Skills = () => {
 
       <SectionTitle
         position-y={isMobile ? 0.1 : 1.1}
-        position-x={isMobile ? -3.5 : 0.4}
+        position-x={isMobile ? -3 : 0.4}
         position-z={isMobile ? 1.7 : -0.5}
         rotation-y={isMobile ? -0.6 : -0.5}
         scale={isMobile ? 0.7 : 1}

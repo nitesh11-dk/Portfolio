@@ -9,7 +9,7 @@ import Interface from "./Components/Interface";
 const App = () => {
   return (
     <div className="h-screen w-screen">
-      <Leva />
+      <Leva hidden />
       {/* <Canvas camera={{ position: [0, 0.5, 5], fov: 42 }}> */}
 
       <Canvas
