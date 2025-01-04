@@ -10,10 +10,19 @@ const Projects = () => {
 
   return (
     <group
-      position={isMobile ? [1.4, -0.1, SECTIONS_DISTANCE * 2] : [0.4, 0, SECTIONS_DISTANCE * 2]}
+      position={
+        isMobile
+          ? [1.4, -0.1, SECTIONS_DISTANCE * 2]
+          : [0.4, 0, SECTIONS_DISTANCE * 2]
+      }
       rotation={isMobile ? [0, -1.5, 0] : [0, 0, 0]}
     >
-      <group position-x={0.5} position-z={0} rotation-y={-Math.PI / 5} scale={0.8}>
+      <group
+        position-x={0.5}
+        position-z={0}
+        rotation-y={-Math.PI / 5}
+        scale={0.8}
+      >
         <SectionTitle position-x={-0.8} position-y={1} position-z={-0.7}>
           Projects
         </SectionTitle>
