@@ -42,7 +42,12 @@ const Contact = () => {
         position-y={isMobile ? 0.5 : 0.25}
         position-z={isMobile ? 2.7 : -0.5}
       />
-      <ParkBench scale={0.5} position-x={isMobile ? 1.9 : 1} position-z={-2} rotation-y={-2.3} />
+      <ParkBench
+        scale={0.5}
+        position-x={isMobile ? 1.9 : 1}
+        position-z={-2}
+        rotation-y={-2.3}
+      />
     </group>
   );
 };

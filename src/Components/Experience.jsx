@@ -118,7 +118,7 @@ const Experience = () => {
   return (
     <group className="mainContainer" position={[0.6, 0, 0]}>
       <Environment preset="city" />
-      <axesHelper args={[5]} />
+      {/* <axesHelper args={[5]} /> */}
       <Avatar />
       {/* <OrbitControls /> */}
 
