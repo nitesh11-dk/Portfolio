@@ -45,7 +45,7 @@ export function Social(props) {
           onClick={() => window.open(socialLinks.linkedin)}
         />
         <Discord
-          position={[-2, 3.2, -1.4]}
+          position={[-2, 2.5, -1.4]}
           rotation={[0, Math.PI, Math.PI]}
           onPointerEnter={() => setHovered("discord")}
           onPointerLeave={() => setHovered(null)}
