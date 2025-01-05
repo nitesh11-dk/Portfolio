@@ -105,6 +105,7 @@ const Experience = () => {
     <group className="mainContainer" position={[0.6, 0, 0]}>
       <Environment preset="sunset" />
       <Avatar />
+      <ambientLight intensity={0.3} />
       <mesh position-y={-0.001} rotation-x={-Math.PI / 2}>
         <planeGeometry args={[100, 100]} />
         <MeshReflectorMaterial
