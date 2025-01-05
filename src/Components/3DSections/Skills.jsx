@@ -42,11 +42,7 @@ const Skills = () => {
         Skills
       </SectionTitle>
 
-      <group
-        position={[-2.2, 1, 0]}
-        rotation-y={isMobile ? 0 : 0.6}
-        scale={0.8}
-      >
+      <group position={[-2.2, 1, 0]} rotation-y={isMobile ? 0 : 0.6} scale={1}>
         <PhysicsCube />
       </group>
     </group>

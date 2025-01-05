@@ -11,7 +11,7 @@ import { useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import { config } from "../config";
 import { useMobile } from "../Helpers/useMobile";
-import { useControls } from "leva";
+import { MeshReflectorMaterial } from "@react-three/drei";
 
 const Experience = () => {
   const sectionContainer = useRef();
@@ -25,9 +25,13 @@ const Experience = () => {
       if (scrollData.offset === 0) {
         camera.position.set(1.3, 2.9, 3.4);
         camera.rotation.set(-0.6, 0.16, 0);
+        camera.fov = 42;
+        camera.updateProjectionMatrix();
       } else if (scrollData.offset > 0) {
-        camera.position.set(-4.0, 0.2, -1);
+        camera.position.set(-4.0, 0.2, -0.5);
         camera.rotation.set(0, -1.78, 0);
+        camera.fov = 62;
+        camera.updateProjectionMatrix();
       }
     } else {
       let targetPosition, targetRotation;
@@ -101,9 +105,14 @@ const Experience = () => {
     <group className="mainContainer" position={[0.6, 0, 0]}>
       <Environment preset="sunset" />
       <Avatar />
-      <mesh rotation-x={-Math.PI / 2} position-y={-0.001}>
+      <mesh position-y={-0.001} rotation-x={-Math.PI / 2}>
         <planeGeometry args={[100, 100]} />
-        <meshStandardMaterial color="#1a1a1a" roughness={0.2} metalness={0.8} />
+        <MeshReflectorMaterial
+          color="#171720"
+          resolution={1024}
+          mixStrength={12}
+          roughness={0.6}
+        />
       </mesh>
 
       <ContactShadows opacity={0.5} scale={[30, 30]} color="#9c8e66" />

@@ -19,7 +19,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.4.0",
-    "three": "^0.153.0"
+    "three": "0.152.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",

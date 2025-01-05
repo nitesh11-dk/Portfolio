@@ -11,7 +11,11 @@ const Contact = () => {
 
   return (
     <group
-      position={isMobile ? [1.4, -0.1, SECTIONS_DISTANCE * 3] : [0.4, 0, SECTIONS_DISTANCE * 3]}
+      position={
+        isMobile
+          ? [1.4, -0.1, SECTIONS_DISTANCE * 3]
+          : [0.4, 0, SECTIONS_DISTANCE * 3]
+      }
       rotation={isMobile ? [0, -1.5, 0] : [0, 0, 0]}
     >
       <Float
@@ -39,8 +43,8 @@ const Contact = () => {
 
       <ParkBench
         scale={0.5}
-        position-x={isMobile ? 1.9 : 1}
-        position-z={-2}
+        position-x={isMobile ? 1 : 1}
+        position-z={isMobile ? 1 : -2}
         rotation-y={-2.3}
       />
     </group>
