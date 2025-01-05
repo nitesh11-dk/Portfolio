@@ -9,7 +9,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 w-screen  sm:w-fit left-1/2 -translate-x-1/2 p-4 bg-[#f5f3ef8a] z-50">
+    <nav className="fixed top-0 w-screen sm:w-fit left-1/2 -translate-x-1/2 p-4  z-50">
       <div className="flex justify-between sm:gap-20 sm:justify-center items-center">
         <div className="text-2xl font-bold">{config.loadingScreen}</div>
 
@@ -21,7 +21,7 @@ const Navbar = () => {
         </button>
 
         {/* Desktop Menu */}
-        <div className="hidden sm:flex gap-6 items-center">
+        <div className="hidden sm:flex gap-8 items-center">
           {config.sections.map((section, index) => (
             <a
               key={index}
