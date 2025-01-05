@@ -24,7 +24,7 @@ const Experience = () => {
     if (isMobile) {
       if (scrollData.offset === 0) {
         camera.position.set(1.3, 2.9, 3.4);
-        camera.rotation.set(-0.6, 0.16, 0);
+        camera.rotation.set(-0.5, 0.16, 0);
         camera.fov = 42;
         camera.updateProjectionMatrix();
       } else if (scrollData.offset > 0) {

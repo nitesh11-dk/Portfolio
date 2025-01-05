@@ -1,8 +1,8 @@
 export const config = {
   sections: ["Home", "Skills", "Projects", "Contact"],
   loadingScreen: "NK",
-  title: "Hello I'm",
-  subtitle: "Nitesh Kushwaha",
+  name: "Nitesh",
+
   skills: [
     {name: "HTML", color: "#E44D26", textColor: "#FFFFFF"},
     {name: "CSS", color: "#264DE4", textColor: "#FFFFFF"},
