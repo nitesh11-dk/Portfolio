@@ -41,6 +41,7 @@ const App = () => {
           </Scroll>
         </ScrollControls>
       </Canvas>
+
       {progress === 100 && !active && <Navbar />}
     </div>
   );
