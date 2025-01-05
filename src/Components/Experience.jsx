@@ -1,10 +1,10 @@
 import { ContactShadows, Environment, useScroll } from "@react-three/drei";
 import { Avatar } from "./3D/Avatar";
 import { useRef } from "react";
-import Home from "./Sections3D/Home.jsx";
-import Skills from "./Sections3D/Skills.jsx";
-import Projects from "./Sections3D/Projects.jsx";
-import Contact from "./Sections3D/Contact.jsx";
+import Home from "./3DSections/Home.jsx";
+import Skills from "./3DSections/Skills.jsx";
+import Projects from "./3DSections/Projects.jsx";
+import Contact from "./3DSections/Contact.jsx";
 import { useFrame } from "@react-three/fiber";
 import { useApp } from "../Context/context";
 import { useThree } from "@react-three/fiber";
@@ -12,6 +12,7 @@ import * as THREE from "three";
 import { config } from "../config";
 import { useMobile } from "../Helpers/useMobile";
 import { useControls } from "leva";
+
 
 const Experience = () => {
   const sectionContainer = useRef();

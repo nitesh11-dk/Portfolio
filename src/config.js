@@ -1,5 +1,6 @@
 export const config = {
   sections: ["About", "Skills", "Projects", "Contact"],
+  loadingScreen: "NK",
   title: "Hello I'm",
   subtitle: "Nitesh Kushwaha",
   skills: [

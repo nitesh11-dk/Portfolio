@@ -6,6 +6,8 @@ import { config } from "./config.js";
 import { Leva } from "leva";
 import Interface from "./Components/Interface";
 import { useMobile } from "./Helpers/useMobile.jsx";
+import { LoadingScreen } from "./Components/Sections/LoadingScreen";
+import { Suspense } from "react";
 
 const App = () => {
   const isMobile = useMobile();
@@ -13,6 +15,7 @@ const App = () => {
   return (
     <div className="h-screen w-screen">
       <Leva hidden />
+      <LoadingScreen />
       <Canvas
         camera={{
           position: [0.08, 4.63, 3.98],
@@ -28,7 +31,9 @@ const App = () => {
           maxSpeed={0.3}
         >
           <group position-y={-1}>
-            <Experience />
+            <Suspense>
+              <Experience />
+            </Suspense>
           </group>
           <Scroll html>
             <Interface />
