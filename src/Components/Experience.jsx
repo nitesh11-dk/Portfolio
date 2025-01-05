@@ -1,6 +1,6 @@
 import { ContactShadows, Environment, useScroll } from "@react-three/drei";
 import { Avatar } from "./3D/Avatar";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import Home from "./3DSections/Home.jsx";
 import Skills from "./3DSections/Skills.jsx";
 import Projects from "./3DSections/Projects.jsx";
@@ -12,7 +12,6 @@ import * as THREE from "three";
 import { config } from "../config";
 import { useMobile } from "../Helpers/useMobile";
 import { useControls } from "leva";
-
 
 const Experience = () => {
   const sectionContainer = useRef();
@@ -71,9 +70,38 @@ const Experience = () => {
     );
   }
 
+  // for navigation
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace("#", "").toLowerCase();
+      const sectionIndex = config.sections.findIndex(
+        (section) => section.toLowerCase() === hash
+      );
+
+      if (sectionIndex !== -1) {
+        if (scrollData.el) {
+          scrollData.el.scrollTo({
+            top:
+              (sectionIndex / (config.sections.length - 1)) *
+              (scrollData.el.scrollHeight - scrollData.el.clientHeight),
+            behavior: "smooth",
+          });
+        } else {
+          console.error("scrollData.el is not defined");
+        }
+      }
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, [scrollData.el]);
+
   useFrame(() => {
-    sectionContainer.current.position.z =
-      -scrollData.offset * SECTIONS_DISTANCE * (scrollData.pages - 1);
+    sectionContainer.current.position.z = THREE.MathUtils.lerp(
+      sectionContainer.current.position.z,
+      -scrollData.offset * SECTIONS_DISTANCE * (scrollData.pages - 1),
+      1
+    );
     setCurrentSection(
       config.sections[Math.floor(scrollData.offset * (scrollData.pages - 1))]
     );
@@ -88,6 +116,7 @@ const Experience = () => {
         <planeGeometry args={[100, 100]} />
         <meshStandardMaterial color="#1a1a1a" roughness={0.2} metalness={0.8} />
       </mesh>
+
       <ContactShadows opacity={0.5} scale={[30, 30]} color="#9c8e66" />
       <group ref={sectionContainer}>
         <Home />

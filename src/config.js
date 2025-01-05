@@ -1,5 +1,5 @@
 export const config = {
-  sections: ["About", "Skills", "Projects", "Contact"],
+  sections: ["Home", "Skills", "Projects", "Contact"],
   loadingScreen: "NK",
   title: "Hello I'm",
   subtitle: "Nitesh Kushwaha",

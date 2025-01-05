@@ -10,14 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/cannon": "^6.6.0",
     "@react-three/drei": "^9.74.14",
     "@react-three/fiber": "^8.13.0",
     "@types/three": "^0.152.1",
-    "@react-three/cannon": "^6.6.0",
     "lamina": "^1.1.23",
     "leva": "^0.9.35",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^5.4.0",
     "three": "^0.153.0"
   },
   "devDependencies": {

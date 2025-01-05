@@ -8,9 +8,10 @@ import Interface from "./Components/Interface";
 import { useMobile } from "./Helpers/useMobile.jsx";
 import { LoadingScreen } from "./Components/Sections/LoadingScreen";
 import { Suspense } from "react";
-
+import Navbar from "./Components/Sections/Navbar";
+import { useProgress } from "@react-three/drei";
 const App = () => {
-  const isMobile = useMobile();
+  const { progress, active } = useProgress();
 
   return (
     <div className="h-screen w-screen">
@@ -40,6 +41,7 @@ const App = () => {
           </Scroll>
         </ScrollControls>
       </Canvas>
+      {progress === 100 && !active && <Navbar />}
     </div>
   );
 };
