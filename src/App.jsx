@@ -5,17 +5,18 @@ import { Scroll, ScrollControls } from "@react-three/drei";
 import { config } from "./config.js";
 import { Leva } from "leva";
 import Interface from "./Components/Interface";
-import { useMobile } from "./Helpers/useMobile.jsx";
 import { LoadingScreen } from "./Components/Sections/LoadingScreen";
 import { Suspense } from "react";
 import Navbar from "./Components/Sections/Navbar";
 import { useProgress } from "@react-three/drei";
+import { AppProvider } from "./Context/context";
+
 const App = () => {
   const { progress, active } = useProgress();
 
   return (
     <div className="h-screen w-screen">
-      <Leva hidden />
+      <Leva />
       <LoadingScreen />
       <Canvas
         camera={{
@@ -37,7 +38,9 @@ const App = () => {
             </Suspense>
           </group>
           <Scroll html>
-            <Interface />
+            <AppProvider>
+              <Interface />
+            </AppProvider>
           </Scroll>
         </ScrollControls>
       </Canvas>

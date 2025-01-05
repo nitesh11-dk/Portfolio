@@ -25,5 +25,31 @@ export const config = {
     linkedin: "https://www.linkedin.com/in/nitesh-dk/",
     discord: "https://discord.gg/yourdiscord"
   },
-  resume: "https://drive.google.com/file/d/1xKIlWUUvlDMo4Dj9vs29O1_2L69P10Tp/view"
+  resume: "https://drive.google.com/file/d/1xKIlWUUvlDMo4Dj9vs29O1_2L69P10Tp/view",
+  projects: [
+    {
+      name: "Dissolve tutorial",
+      description: "Create a dissolve effect with React Three Fiber",
+      image: "projects/project1.jpg",
+      link: "https://www.youtube.com/watch?v=ma9t7HAOZRg",
+    },
+    {
+      name: "Transition effect",
+      description: "Shader based transition effect",
+      image: "projects/project2.jpg",
+      link: "https://www.youtube.com/watch?v=SOF7GBmC6gE",
+    },
+    {
+      name: "Portals",
+      description: "Create portals with React Three Fiber",
+      image: "projects/project3.jpg",
+      link: "https://www.youtube.com/watch?v=2W_VR92Pqgs",
+    },
+    {
+      name: "3D Portfolio",
+      description: "Learn how to build a 3D portfolio",
+      image: "projects/project4.jpg",
+      link: "https://www.youtube.com/watch?v=pGMKIyALcK0",
+    },
+  ],
 };
