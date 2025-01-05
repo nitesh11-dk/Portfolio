@@ -6,9 +6,6 @@ export const AppContext = createContext();
 export const AppProvider = ({ children }) => {
   const SECTIONS_DISTANCE = 8;
   const [currentSection, setCurrentSection] = useState(config.sections[0]);
-  const [projectTexture, setProjectTexture] = useState(
-    config.projects[0].image
-  );
 
   return (
     <AppContext.Provider
@@ -16,8 +13,6 @@ export const AppProvider = ({ children }) => {
         SECTIONS_DISTANCE,
         currentSection,
         setCurrentSection,
-        projectTexture,
-        setProjectTexture,
       }}
     >
       {children}

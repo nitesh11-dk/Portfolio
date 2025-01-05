@@ -5,7 +5,7 @@ export const MonitorScreen = (props) => {
   const { projectTexture } = useApp();
   // Load texture directly using useTexture hook
   const texture = useTexture(projectTexture);
-
+  console.log(texture);
   return (
     <group {...props}>
       <mesh>

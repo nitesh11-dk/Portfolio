@@ -1,18 +1,11 @@
 import React from "react";
 import { config } from "../../config";
-import { useApp } from "../../Context/context";
 
 const Projects = () => {
-  const { setProjectTexture } = useApp();
-
-  const handleProjectHover = (image) => {
-    setProjectTexture(image);
-  };
-
   return (
     <section className="h-screen flex justify-start items-end md:items-end">
       <div className="p-4 grid md:grid-cols-[repeat(auto-fit,220px)] w-full md:w-[500px] justify-center gap-4 flex md:flex-none overflow-x-auto">
-        {config.projects.map((project, idx) => (
+        {config.projects.map((project) => (
           <div
             key={project.name}
             className="bg-white/50 overflow-hidden backdrop-blur-md rounded-lg transition-all hover:bg-white hover:scale-105 cursor-pointer min-w-[220px] md:min-w-0"
