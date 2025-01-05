@@ -12,7 +12,7 @@ const Skills = () => {
     <group
       position={
         isMobile
-          ? [1.4, -0.1, SECTIONS_DISTANCE + 2]
+          ? [1.4, -0.1, SECTIONS_DISTANCE + 2.5]
           : [0.4, 0, SECTIONS_DISTANCE]
       }
       rotation={isMobile ? [0, -1.5, 0] : [0, 0, 0]}
