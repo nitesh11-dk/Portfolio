@@ -44,7 +44,7 @@ export function Avatar(props) {
 
   useFrame(() => {
     const scrollDelta = scrollData.offset - lastScroll.current;
-    const lerpFactor = scrollData.offset === 0 ? 0.07 : 0.07;
+    const lerpFactor = scrollData.offset === 0 ? 0.06 : 0.03;
     const targetPosition =
       scrollData.offset === 0 ? [-0.55, 0.0, -0.3] : [0, 0.06, 0];
 

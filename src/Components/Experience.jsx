@@ -20,54 +20,43 @@ const Experience = () => {
   const { SECTIONS_DISTANCE, setCurrentSection } = useApp();
   const { camera } = useThree();
 
-  const { mobilePosition, mobileRotation } = useControls("Mobile Camera", {
-    mobilePosition: {
-      value: { x: -4.0, y: 0.2, z: -1 },
-      step: 0.1,
-    },
-    mobileRotation: {
-      value: { x: 0, y: -1.78, z: 0 },
-      step: 0.01,
-    },
-  });
+  function updateCameraPosition() {
+    if (isMobile) {
+      if (scrollData.offset === 0) {
+        camera.position.set(1.3, 2.9, 3.4);
+        camera.rotation.set(-0.6, 0.16, 0);
+      } else if (scrollData.offset > 0) {
+        camera.position.set(-4.0, 0.2, -1);
+        camera.rotation.set(0, -1.78, 0);
+      }
+    } else {
+      let targetPosition, targetRotation;
 
-  function CameraPosition() {
-    const targetPosition = isMobile
-      ? scrollData.offset === 0
-        ? new THREE.Vector3(1.3, 2.9, 3.4)
-        : new THREE.Vector3(
-            mobilePosition.x,
-            mobilePosition.y,
-            mobilePosition.z
-          )
-      : scrollData.offset === 0
-      ? new THREE.Vector3(0.08, 1.53, 2.5)
-      : new THREE.Vector3(0.7, 0.3, 4);
+      if (scrollData.offset === 0) {
+        targetPosition = new THREE.Vector3(0.08, 1.53, 2.5);
+        targetRotation = new THREE.Euler(-0.58, 0.09, 0);
+      } else {
+        targetPosition = new THREE.Vector3(0.7, 0.3, 4);
+        targetRotation = new THREE.Euler(0, 0, 0);
+      }
 
-    const targetRotation = isMobile
-      ? scrollData.offset === 0
-        ? new THREE.Euler(-0.6, 0.16, 0)
-        : new THREE.Euler(mobileRotation.x, mobileRotation.y, mobileRotation.z)
-      : scrollData.offset === 0
-      ? new THREE.Euler(-0.58, 0.09, 0)
-      : new THREE.Euler(0, 0, 0);
-
-    camera.position.lerp(targetPosition, 0.07);
-    camera.rotation.x = THREE.MathUtils.lerp(
-      camera.rotation.x,
-      targetRotation.x,
-      isMobile ? 0.02 : 0.07
-    );
-    camera.rotation.y = THREE.MathUtils.lerp(
-      camera.rotation.y,
-      targetRotation.y,
-      isMobile ? 0.02 : 0.07
-    );
-    camera.rotation.z = THREE.MathUtils.lerp(
-      camera.rotation.z,
-      targetRotation.z,
-      isMobile ? 0.02 : 0.07
-    );
+      camera.position.lerp(targetPosition, 0.07);
+      camera.rotation.x = THREE.MathUtils.lerp(
+        camera.rotation.x,
+        targetRotation.x,
+        0.07
+      );
+      camera.rotation.y = THREE.MathUtils.lerp(
+        camera.rotation.y,
+        targetRotation.y,
+        0.07
+      );
+      camera.rotation.z = THREE.MathUtils.lerp(
+        camera.rotation.z,
+        targetRotation.z,
+        0.07
+      );
+    }
   }
 
   // for navigation
@@ -105,7 +94,7 @@ const Experience = () => {
     setCurrentSection(
       config.sections[Math.floor(scrollData.offset * (scrollData.pages - 1))]
     );
-    CameraPosition();
+    updateCameraPosition();
   });
 
   return (
