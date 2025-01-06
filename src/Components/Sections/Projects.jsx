@@ -25,7 +25,9 @@ const Projects = () => {
                   <h2 className="text-[#1a202c] font-bold text-lg sm:text-xl mb-1 sm:mb-2">
                     {project.name}
                   </h2>
-                  <p className="text-[#555] text-xs sm:text-sm line-clamp-2">{project.description}</p>
+                  <p className="text-[#555] text-xs sm:text-sm line-clamp-2">
+                    {project.description}
+                  </p>
                 </div>
               </a>
             </div>

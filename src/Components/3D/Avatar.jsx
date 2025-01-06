@@ -37,14 +37,14 @@ export function Avatar(props) {
     const action = actions[animation];
     action.reset().fadeIn(0.3).play();
     if (animation === "Walk") {
-      action.timeScale = 1.7; // Makes the walk animation 50% faster
+      action.timeScale = 1.6; // Makes the walk animation 50% faster
     }
     return () => (action.reset().fadeOut(0.3).paused = true);
   }, [animation, actions]);
 
   useFrame(() => {
     const scrollDelta = scrollData.offset - lastScroll.current;
-    const lerpFactor = scrollData.offset === 0 ? 0.06 : 0.03;
+    const lerpFactor = scrollData.offset === 0 ? 0.06 : 0.06;
     const targetPosition =
       scrollData.offset === 0 ? [-0.55, 0.0, -0.3] : [0, 0.06, 0];
 
