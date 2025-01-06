@@ -29,6 +29,7 @@ export function Resume(props) {
     >
       <Html>
         <div
+          onClick={() => window.open(config.resume, "_blank")}
           className="bg-black/80 text-white px-2 py-1 rounded-lg"
           style={{ opacity }}
         >
