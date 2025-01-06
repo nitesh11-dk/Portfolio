@@ -4,19 +4,23 @@ export const config = {
   name: "Nitesh",
 
   skills: [
-    {name: "HTML", color: "#E44D26", textColor: "#FFFFFF"},
-    {name: "CSS", color: "#264DE4", textColor: "#FFFFFF"},
-    {name: "JavaScript", color: "#F7DF1E", textColor: "#000000"},
+    {name: "JS", color: "#F7DF1E", textColor: "#000000"},
+    {name: "TS", color: "#3178C6", textColor: "#FFFFFF"},
+    {name: "Python", color: "#3776AB", textColor: "#FFFFFF"},
+    {name: "SQL", color: "#4479A1", textColor: "#FFFFFF"},
     {name: "React", color: "#61DAFB", textColor: "#000000"},
-    {name: "Docker", color: "#2496ED", textColor: "#FFFFFF"},
-    {name: "ThreeJS", color: "#000000", textColor: "#FFFFFF"},
+    {name: "Redux", color: "#764ABC", textColor: "#FFFFFF"},
+    {name: "Next.js", color: "#000000", textColor: "#FFFFFF"},
+    {name: "HTML", color: "#E34F26", textColor: "#FFFFFF"},
+    {name: "CSS", color: "#1572B6", textColor: "#FFFFFF"},
+    {name: "Tailwind", color: "#06B6D4", textColor: "#FFFFFF"},
+    {name: "Node.js", color: "#339933", textColor: "#FFFFFF"},
     {name: "Express", color: "#4A4A4A", textColor: "#FFFFFF"},
-    {name: "NodeJs", color: "#339933", textColor: "#FFFFFF"},
-    {name: "MongoDB", color: "#4DB33D", textColor: "#FFFFFF"},
+    {name: "MongoDB", color: "#47A248", textColor: "#FFFFFF"},
     {name: "Git", color: "#F05032", textColor: "#FFFFFF"},
-    {name: "GitHub", color: "#181717", textColor: "#FFFFFF"},
+    {name: "Docker", color: "#2496ED", textColor: "#FFFFFF"},
     {name: "Linux", color: "#FCC624", textColor: "#000000"},
-    {name: "NextJS", color: "#0070F3", textColor: "#FFFFFF"}
+    {name: "R3F", color: "#8257E6", textColor: "#FFFFFF"}
   ],
   socialLinks: {
     mail: "niteshdk11@gmail.com",
