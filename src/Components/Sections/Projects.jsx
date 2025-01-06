@@ -24,9 +24,7 @@ const Projects = () => {
                 <h2 className="text-[#1a202c] font-bold text-xl m-0">
                   {project.name}
                 </h2>
-                <p className="text-[#555] text-base m-0">
-                  {project.description}
-                </p>
+                <p className="text-[#555] text-sm m-0">{project.description}</p>
               </div>
             </a>
           </div>
