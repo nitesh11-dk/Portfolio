@@ -28,22 +28,22 @@ export const config = {
   resume: "https://drive.google.com/file/d/1xKIlWUUvlDMo4Dj9vs29O1_2L69P10Tp/view",
   projects: [
     {
-      name: "Dissolve tutorial",
-      description: "Create a dissolve effect with React Three Fiber",
-      image: "projects/project1.jpg",
-      link: "https://www.youtube.com/watch?v=ma9t7HAOZRg",
+      name: "Algo Viz",
+      description: "A web-based platform that visualizes data structures and algorithms through real-time animations.",
+      image: "projects/project1.png",
+      link: "https://algo-viz-seven.vercel.app/",
     },
     {
-      name: "Transition effect",
-      description: "Shader based transition effect",
-      image: "projects/project2.jpg",
-      link: "https://www.youtube.com/watch?v=SOF7GBmC6gE",
+      name: "Tech-Bazaar",
+      description: "A microservices-based e-commerce electronics platform with advanced search, filtering, and Razorpay payment integration.",
+      image: "projects/project2.png",
+      link: "https://ecommerce-client-git-main-nitesh-dks-projects.vercel.app/",
     },
     {
       name: "Portals",
-      description: "Create portals with React Three Fiber",
-      image: "projects/project3.jpg",
-      link: "https://www.youtube.com/watch?v=2W_VR92Pqgs",
+      description: "QuickCart: Browse, search, filter, and manage products and cart by category.",
+      image: "projects/project3.png",
+      link: "https://crud-products-c5g7d464q-nitesh-dks-projects.vercel.app/",
     },
     {
       name: "3D Portfolio",
