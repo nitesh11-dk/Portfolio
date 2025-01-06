@@ -40,16 +40,16 @@ export const config = {
       link: "https://ecommerce-client-git-main-nitesh-dks-projects.vercel.app/",
     },
     {
-      name: "Portals",
-      description: "QuickCart: Browse, search, filter, and manage products and cart by category.",
+      name: "QuickCart",
+      description: " Browse, search, filter, and manage products and cart by category.",
       image: "projects/project3.png",
       link: "https://crud-products-c5g7d464q-nitesh-dks-projects.vercel.app/",
     },
-    {
-      name: "3D Portfolio",
-      description: "Learn how to build a 3D portfolio",
-      image: "projects/project4.jpg",
-      link: "https://www.youtube.com/watch?v=pGMKIyALcK0",
-    },
+    // {
+    //   name: "3D Portfolio",
+    //   description: "Learn how to build a 3D portfolio",
+    //   image: "projects/project4.jpg",
+    //   link: "https://www.youtube.com/watch?v=pGMKIyALcK0",
+    // },
   ],
 };
